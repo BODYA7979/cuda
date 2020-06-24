@@ -1,11 +1,13 @@
 // Titillium Web from Google Fonts.
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
 
+// Include custom vars and overrides.
+@import 'variables';
+
 // Import bootstrap framework and bt-vue addition styles.
 @import '~bootstrap';
 @import '~bootstrap-vue';
 
-// Base styles.
-body {
-  font-family: 'Titillium Web', sans-serif;
+html {
+  scroll-behavior: smooth;
 }

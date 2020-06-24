@@ -1,9 +1,13 @@
 <template>
-    <section class="page-section" :style="{ backgroundColor: color }">
+    <section class="page-section" :style="{ backgroundColor: bgColor, color: textColor }">
         <b-container>
-            <div class="section--title">{{ title }}</div>
-            <div class="section--description">{{ description }}</div>
-            <slot class="section--content" name="content" />
+            <header class="page-section__header">
+                <h2 class="page-section__header--title">{{ title }}</h2>
+                <p class="page-section__header--description">{{ description }}</p>
+            </header>
+            <article class="page-section__content">
+                <slot name="content" />
+            </article>
         </b-container>
     </section>
 </template>
@@ -11,10 +15,52 @@
 <script>
     export default {
         name: "PageSection",
-        props: ['title', 'description', 'color']
+        props: {
+            title: String,
+            description: String,
+            bgColor: String,
+            textColor: {
+                type: String,
+                default: '#393939'
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    .page-section {
+        padding: 7.5em 0;
+        &__header {
+            &--title {
+                font-size: 2.5em;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 700;
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 88px;
+                    height: 4px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 0.45em;
+                    background-color: rgba(0, 0, 0, 0.15);
+                }
+            }
 
+            &--description {
+                font-size: 1.125em;
+                font-weight: 400;
+                margin: 1em auto 3.33333em;
+                text-align: center;
+                @media (min-width: 768px) {
+                    max-width: 50%;
+                }
+            }
+
+            &--content {
+
+            }
+        }
+    }
 </style>

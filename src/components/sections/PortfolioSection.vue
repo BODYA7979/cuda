@@ -17,7 +17,12 @@
                     sm="6"
                     class="works--item"
                 >
-                    <img :src="work.preview_image" :alt="work.name" class="works--item__image">
+                    <b-img
+                            :src="work.preview_image"
+                            :alt="work.name"
+                            class="works--item__image"
+                            fluid
+                    ></b-img>
                     <p class="works--item__name">
                         {{ work.name }}
                     </p>

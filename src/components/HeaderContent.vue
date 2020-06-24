@@ -7,7 +7,7 @@
                 bg-variant="info"
                 text-variant="white"
         >
-            <b-button variant="primary" size="lg" href="#">Work with us</b-button>
+            <b-button variant="primary" size="lg" href="/#contact">Work with us</b-button>
         </b-jumbotron>
     </b-container>
 </template>
@@ -18,6 +18,6 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

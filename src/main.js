@@ -3,7 +3,7 @@ import { BootstrapVue } from 'bootstrap-vue'
 import VueLodash from 'vue-lodash'
 import lodash from 'lodash'
 import App from './App.vue'
-import './main.scss'
+import './styles/main.scss'
 
 Vue.use(BootstrapVue)
 Vue.use(VueLodash, { lodash: lodash })

@@ -28,5 +28,25 @@
 </script>
 
 <style scoped lang="scss">
+    .card {
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        .card-img-top {
+            /*width: 120px;*/
+            height: 124px;
+            object-fit: contain;
+        }
+        .card-body {
+            margin-top: 24px;
+            padding: 0;
+            .card-title {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            .card-text {
 
+            }
+        }
+    }
 </style>
