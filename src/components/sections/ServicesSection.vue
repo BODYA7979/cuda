@@ -33,7 +33,6 @@
         border: none;
         text-align: center;
         .card-img-top {
-            /*width: 120px;*/
             height: 124px;
             object-fit: contain;
         }
@@ -43,9 +42,6 @@
             .card-title {
                 font-weight: 700;
                 text-transform: uppercase;
-            }
-            .card-text {
-
             }
         }
     }

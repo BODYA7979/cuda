@@ -24,31 +24,43 @@
 
                 <div class="social-links" v-if="!_.isEmpty(item.social)">
                     <b-link
-                            v-if="item.social.facebook"
-                            :href="'https://facebook.com/' + item.social.facebook"
+                        v-if="item.social.facebook"
+                        :href="'https://facebook.com/' + item.social.facebook"
                     >
-                        <MdiFacebook />
+                        <MdiFacebook
+                            :size="33"
+                            :fillColor="'#bdd1df'"
+                        />
                     </b-link>
 
                     <b-link
                         v-if="item.social.twitter"
                         :href="'https://twitter.com/' + item.social.twitter"
                     >
-                        <MdiTwitter />
+                        <MdiTwitter
+                            :size="33"
+                            :fillColor="'#bdd1df'"
+                        />
                     </b-link>
 
                     <b-link
-                            v-if="item.social.linkedIn"
-                            :href="'https://www.linkedin.com/' + item.social.linkedIn"
+                        v-if="item.social.linkedIn"
+                        :href="'https://www.linkedin.com/' + item.social.linkedIn"
                     >
-                        <MdiLinkedIn />
+                        <MdiLinkedIn
+                            :size="33"
+                            :fillColor="'#bdd1df'"
+                        />
                     </b-link>
 
                     <b-link
-                            v-if="item.social.mail"
-                            :href="'mailto:' + item.social.mail"
+                        v-if="item.social.mail"
+                        :href="'mailto:' + item.social.mail"
                     >
-                        <MdiEmail />
+                        <MdiEmail
+                            :size="33"
+                            :fillColor="'#bdd1df'"
+                        />
                     </b-link>
                 </div>
             </b-card>
@@ -57,10 +69,10 @@
 </template>
 
 <script>
-    import MdiFacebook from 'mdi-vue/Facebook'
-    import MdiTwitter from 'mdi-vue/Twitter'
-    import MdiLinkedIn from 'mdi-vue/Linkedin'
-    import MdiEmail from 'mdi-vue/Email'
+    import MdiFacebook from 'vue-material-design-icons/Facebook'
+    import MdiTwitter from 'vue-material-design-icons/Twitter'
+    import MdiLinkedIn from 'vue-material-design-icons/Linkedin'
+    import MdiEmail from 'vue-material-design-icons/Email'
 
     export default {
         name: "TeamSection",
@@ -75,5 +87,42 @@
 </script>
 
 <style scoped lang="scss">
+    .card {
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        .card-img-top {
+            border-radius: 50%;
+            width: 10em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card-body {
+            margin-top: 2.5em;
+            padding: 0;
+            .card-title {
+                text-transform: uppercase;
+                margin-bottom: 0;
+            }
+            .position {
+                margin-top: 1em;
+                color: #30bae7;
+                font-size: 16px;
+            }
+            .card-text {
+                margin-top: 1.625em;
+            }
+            .social-links {
+                margin-top: 1.875em;
+                a {
+                    svg {
 
+                        path {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>
