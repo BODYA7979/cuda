@@ -1,16 +1,18 @@
 <template>
     <b-container>
         <b-navbar toggleable="lg">
-            <b-navbar-brand href="#">Cuda</b-navbar-brand>
+            <b-navbar-brand href="/">
+                <img :src="require('../assets/logo.png')" alt="Cuda Logo"/>
+            </b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ml-auto">
                     <b-nav-item
-                      v-for="(item, index) in processed_links"
+                      v-for="(item, index) in links"
                       :key="'header--nav-item--' + index"
                       :href="item.url"
-                      :active="item.active"
+                      :active="item.url === _document.location.pathname + _document.location.hash"
                     >
                         {{ item.name }}
                     </b-nav-item>
@@ -25,16 +27,37 @@
         name: "Navigation",
         props: ['links'],
         computed: {
-            processed_links() {
-                return this.links.map((menu_item) => {
-                    menu_item.active = menu_item.url === document.location.pathname + document.location.hash;
-                    return menu_item;
-                });
+            _document() {
+                return document;
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
-
+    .navbar {
+        .navbar-brand {
+            img {
+                height: 38px;
+            }
+        }
+        .navbar-collapse {
+            .navbar-nav {
+                .nav-item {
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                    .nav-link {
+                        border-radius: 3px;
+                        text-transform: uppercase;
+                        color: #FFF;
+                        padding: 5px 17px;
+                        &.active, &:hover, &:focus {
+                            background-color: #643A79;
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>

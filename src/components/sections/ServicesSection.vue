@@ -37,11 +37,19 @@
             object-fit: contain;
         }
         .card-body {
-            margin-top: 24px;
+            margin-top: 60px;
             padding: 0;
             .card-title {
                 font-weight: 700;
+                font-size: 24px;
+                line-height: 18px;
                 text-transform: uppercase;
+                margin-bottom: 27px;
+            }
+            .card-text {
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 300;
             }
         }
     }

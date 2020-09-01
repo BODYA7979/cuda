@@ -3,10 +3,10 @@
         <b-container>
             <header class="page-section__header">
                 <h2 class="page-section__header--title">{{ title }}</h2>
-                <p class="page-section__header--description">{{ description }}</p>
+                <p class="page-section__header--description" v-html="description"></p>
             </header>
             <article class="page-section__content">
-                <slot name="content" />
+                <slot />
             </article>
         </b-container>
     </section>
@@ -53,9 +53,6 @@
                 font-weight: 400;
                 margin: 1em auto 3.33333em;
                 text-align: center;
-                @media (min-width: 768px) {
-                    max-width: 50%;
-                }
             }
 
             &--content {

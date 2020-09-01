@@ -9,77 +9,72 @@
     </header>
 
     <PageSection
+      id="about"
       title="Services we provide"
-      description="We are working with both individuals and businesses from all over the globe to create awesome websites and applications."
+      description="We are working with both individuals and businesses from all over the globe<br>to create awesome websites and applications."
       bgColor="#17c2a4"
       textColor="#FFF"
     >
-      <template slot="content">
-        <ServicesSection
-          :services="services"
-        />
-      </template>
+      <ServicesSection
+        :services="services"
+      />
     </PageSection>
 
     <PageSection
+      id="team"
       title="Meet our beautiful team"
       description="We are a small team of designers and developers, who help brands with big ideas."
       bgColor="#e7f1f8"
     >
-      <template slot="content">
-        <TeamSection
-          :people="team_people"
-        />
-      </template>
+      <TeamSection
+        :people="team_people"
+      />
     </PageSection>
 
     <PageSection
+      id="skills"
       title="We got skills!"
-      description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua."
       bgColor="#ffffff"
     >
-      <template slot="content">
-        <SkillsSection
-          :skills="skills"
-        />
-      </template>
+      <SkillsSection
+        :skills="skills"
+      />
     </PageSection>
 
     <PageSection
+      id="portfolio"
       title="Our portfolio"
-      description="Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam"
+      description="Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet<br>consectetur, adipisci velit, sed quia non numquam"
       bgColor="#ffdd99"
     >
-      <template slot="content">
-        <PortfolioSection
-          :works="portfolio_works"
-        />
-      </template>
+      <PortfolioSection
+        :works="portfolio_works"
+      />
     </PageSection>
 
     <PageSection
-      title="What Poeple Say About Us"
+      id="testimonials"
+      title="What People Say About Us"
       description="Our clients love us!"
       bgColor="#d74680"
+      textColor="#FFF"
     >
-      <template slot="content">
-        <TestimonialsSection
-          :items="testimonials"
-        />
-      </template>
+      <TestimonialsSection
+        :items="testimonials"
+      />
     </PageSection>
 
     <PageSection
+      id="contact"
       title="Get In Touch"
       description="1600 Pennsylvania Ave NW, Washington, DC 20500, United States of America. Tel: (202) 456-1111"
       bgColor="#3c5499"
-      id="contact"
+      textColor="#FFF"
     >
-      <template slot="content">
-        <ContactSection
-          @submit="onContactFormSubmit"
-        />
-      </template>
+      <ContactSection
+        @submit="onContactFormSubmit"
+      />
     </PageSection>
 
     <footer class="page-footer">
@@ -295,7 +290,7 @@ export default {
           avatar: require('./assets/reviews-1.jpg'),
           author: 'Chanel Iman',
           position: 'CEO of Pinterest',
-          text: 'Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.'
+          text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.'
         },
         {
           avatar: require('./assets/reviews-2.jpg'),
@@ -333,6 +328,7 @@ export default {
 
 <style lang="scss" scoped>
   header.page-header {
+    padding-top: 56px;
     background-color: #87509c;
   }
 </style>
