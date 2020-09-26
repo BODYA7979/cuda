@@ -9,13 +9,16 @@
         >
             <VueEasyPieChart
                 :percent="skill.percent"
-                :line-width="10"
+                :line-width="13"
                 :scale-color="false"
+                :size="160"
                 :bar-color="skill.color"
-                :font-color="'35px'"
-            />
+            >
+                <span class="skill--percent__number">{{ skill.percent }}</span>
+                <span class="skill--percent__sign">%</span>
+            </VueEasyPieChart>
 
-            <span>{{ skill.name }}</span>
+            <span class="skill--name">{{ skill.name }}</span>
         </b-col>
     </b-row>
 </template>
@@ -34,5 +37,30 @@
 </script>
 
 <style scoped lang="scss">
-
+    .row {
+        .vue-easy-pie-chart {
+            color: #3c4761;
+            font-weight: 300;
+            vertical-align: middle;
+        }
+        .skill {
+            &--percent {
+                &__number {
+                    font-size: 50px;
+                }
+                &_sign {
+                    font-size: 32px;
+                }
+            }
+            &--name {
+                margin-top: 30px;
+                display: block;
+                text-align: center;
+                font-size: 24px;
+                line-height: 18px;
+                color: #3c4761;
+                font-weight: 700;
+            }
+        }
+    }
 </style>
