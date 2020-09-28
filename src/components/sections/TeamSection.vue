@@ -4,6 +4,7 @@
             el: ['.card-text'],
             disabled: [768]
         }"
+        class="team"
     >
         <b-col
           v-for="(item, index) in people"
@@ -11,6 +12,7 @@
           :cols="12"
           :sm="6"
           :md="3"
+          class="team-people"
         >
             <b-card
                 :title="item.full_name"
@@ -84,54 +86,63 @@
 </script>
 
 <style scoped lang="scss">
-    .card {
-        background-color: transparent;
-        border: none;
-        text-align: center;
-        .card-img-top {
-            border-radius: 100px;
-            width: 200px;
-            height: 200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .card-body {
-            margin-top: 2.5em;
-            padding: 0;
-            .card-title {
-                text-transform: uppercase;
-                margin-bottom: 0;
-                font-size: 24px;
-                line-height: 18px;
-                color: #27283d;
-                font-weight: 700;
+    .team {
+        .team-people {
+            &:not(:last-child) {
+                @media (max-width: 768px) {
+                    margin-bottom: 100px;
+                }
             }
-            .position {
-                margin-top: 15px;
-                font-size: 16px;
-                line-height: 18px;
-                color: #30bae7;
-                font-weight: 400;
-            }
-            .card-text {
-                margin-top: 26px;
-                font-weight: 300;
-                font-size: 16px;
-                line-height: 24px;
-                color: #3c4761;
-            }
-            .social-links {
-                margin-top: 1.875em;
-                a {
-                    background-color: #bdd1df;
-                    color: #fff;
-                    border-radius: 50%;
-                    width: 32px;
-                    height: 32px;
-                    display: inline-block;
-                    padding-top: 4px;
-                    &:not(:last-child) {
-                        margin-right: 10px;
+            .card {
+                background-color: transparent;
+                border: none;
+                text-align: center;
+                .card-img-top {
+                    border-radius: 100px;
+                    width: 200px;
+                    height: 200px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .card-body {
+                    margin-top: 2.5em;
+                    padding: 0;
+                    .card-title {
+                        text-transform: uppercase;
+                        margin-bottom: 0;
+                        font-size: 24px;
+                        line-height: 18px;
+                        color: #27283d;
+                        font-weight: 700;
+                    }
+                    .position {
+                        margin-top: 15px;
+                        font-size: 16px;
+                        line-height: 18px;
+                        color: #30bae7;
+                        font-weight: 400;
+                    }
+                    .card-text {
+                        margin-top: 26px;
+                        font-weight: 300;
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: #3c4761;
+                    }
+                    .social-links {
+                        margin-top: 1.875em;
+                        a {
+                            background-color: #bdd1df;
+                            color: #fff;
+                            border-radius: 50%;
+                            width: 32px;
+                            height: 32px;
+                            display: inline-block;
+                            padding-top: 4px;
+                            &:not(:last-child) {
+                                margin-right: 10px;
+                            }
+                        }
                     }
                 }
             }

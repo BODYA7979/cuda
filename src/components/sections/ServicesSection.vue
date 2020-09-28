@@ -1,11 +1,12 @@
 <template>
-    <b-row>
+    <b-row class="services">
         <b-col
             v-for="service in services"
             :key="'service--' + service.name"
             cols="12"
             sm="6"
             md="3"
+            class="service"
         >
             <b-card
                     :title="service.name"
@@ -28,28 +29,37 @@
 </script>
 
 <style scoped lang="scss">
-    .card {
-        background-color: transparent;
-        border: none;
-        text-align: center;
-        .card-img-top {
-            height: 124px;
-            object-fit: contain;
-        }
-        .card-body {
-            margin-top: 60px;
-            padding: 0;
-            .card-title {
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 18px;
-                text-transform: uppercase;
-                margin-bottom: 27px;
+    .services {
+        .service {
+            &:not(:last-child) {
+                @media (max-width: 768px) {
+                    margin-bottom: 100px;
+                }
             }
-            .card-text {
-                font-size: 16px;
-                line-height: 24px;
-                font-weight: 300;
+            .card {
+                background-color: transparent;
+                border: none;
+                text-align: center;
+                .card-img-top {
+                    height: 124px;
+                    object-fit: contain;
+                }
+                .card-body {
+                    margin-top: 60px;
+                    padding: 0;
+                    .card-title {
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 18px;
+                        text-transform: uppercase;
+                        margin-bottom: 27px;
+                    }
+                    .card-text {
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 300;
+                    }
+                }
             }
         }
     }

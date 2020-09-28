@@ -290,25 +290,25 @@ export default {
           avatar: require('./assets/reviews-1.jpg'),
           author: 'Chanel Iman',
           position: 'CEO of Pinterest',
-          text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.'
+          text: 'Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.'
         },
         {
           avatar: require('./assets/reviews-2.jpg'),
           author: 'Adriana Lima',
           position: 'Founder of Instagram',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim dignissimos, quas alias cumque!'
+          text: 'Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.'
         },
         {
           avatar: require('./assets/reviews-3.jpg'),
           author: 'Anne Hathaway',
           position: 'Lead Designer at Behance',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius deserunt dolores expedita sed sit.'
+          text: 'Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.'
         },
         {
           avatar: require('./assets/reviews-4.jpg'),
           author: 'Emma Stone',
           position: 'Co-Founder of Shazam',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla hic iste laborum tempora iure.'
+          text: 'Phasellus non purus vel arcu tempor commodo. Fusce semper, purus vel luctus molestie, risus sem cursus neque.'
         }
       ]
     }

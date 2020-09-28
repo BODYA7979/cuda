@@ -1,12 +1,18 @@
 <template>
-    <div>
+    <div class="portfolio">
         <div class="category-filter">
-            <button
+            <ul>
+                <li
                     v-for="(category, index) in categories"
                     :key="'portfolio--category--' + index"
-                    @click="changeCategory(category)"
-                    class="btn"
-            >{{ category }}</button>
+                    :class="{ active: category === selected_category }"
+                >
+                    <button
+                        @click="changeCategory(category)"
+                        class="btn"
+                    >{{ category }}</button>
+                </li>
+            </ul>
         </div>
         <div class="works">
             <b-row>
@@ -22,12 +28,16 @@
                             :alt="work.name"
                             class="works--item__image"
                             fluid
+                            @click="openPreview(work)"
                     ></b-img>
-                    <p class="works--item__name">
+                    <span class="works--item__name" @click="openPreview(work)">
                         {{ work.name }}
-                    </p>
+                    </span>
                 </b-col>
             </b-row>
+        </div>
+        <div class="action-btn--wrapper">
+            <b-button href="#" class="action--btn" @click="loadMore">Load more projects</b-button>
         </div>
     </div>
 </template>
@@ -61,11 +71,71 @@
         methods: {
             changeCategory(category) {
                 this.selected_category = category;
+            },
+            loadMore() {
+                this.$bvModal.msgBoxOk('Load more items not implemented yet!');
+            },
+            openPreview(work) {
+                this.$bvModal.msgBoxOk('You trying to preview "' + work.name + '" but this feature not implemented yet!');
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
-
+    .portfolio {
+        .category-filter {
+            ul {
+                text-align: center;
+                list-style: none;
+                padding: 0;
+                display: block;
+                margin-bottom: -9px;
+                li {
+                    display: inline-block;
+                    margin-bottom: 9px;
+                    &:hover .btn {
+                        background-color: rgba(0, 0, 0, 0.156);
+                    }
+                    &.active .btn {
+                        background: #FFFFFF;
+                    }
+                    &:not(:last-child) {
+                        margin-right: 9px;
+                    }
+                    .btn {
+                        text-transform: uppercase;
+                        padding: 8px 26px;
+                        border-radius: 4px;
+                        background-color: rgba(0, 0, 0, 0.078);
+                        font-size: 18px;
+                        line-height: 20px;
+                        color: #393939;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .works {
+            margin-top: 60px;
+            .works--item {
+                margin-bottom: 64px;
+                .works--item__image {
+                    width: 540px;
+                    cursor: pointer;
+                }
+                .works--item__name {
+                    font-size: 18px;
+                    line-height: 20px;
+                    color: #393939;
+                    font-weight: 400;
+                    display: block;
+                    text-align: center;
+                    margin-top: 30px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 </style>

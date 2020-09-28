@@ -1,11 +1,12 @@
 <template>
-    <b-row>
+    <b-row class="skills">
         <b-col
             v-for="(skill, index) in skills"
             :key="'skill--' + index"
             cols="12"
             sm="6"
             md="3"
+            class="skill"
         >
             <VueEasyPieChart
                 :percent="skill.percent"
@@ -37,18 +38,23 @@
 </script>
 
 <style scoped lang="scss">
-    .row {
-        .vue-easy-pie-chart {
-            color: #3c4761;
-            font-weight: 300;
-            vertical-align: middle;
-        }
+    .skills {
         .skill {
+            &:not(:last-child) {
+                @media (max-width: 768px) {
+                    margin-bottom: 100px;
+                }
+            }
+            .vue-easy-pie-chart {
+                color: #3c4761;
+                font-weight: 300;
+                vertical-align: middle;
+            }
             &--percent {
                 &__number {
                     font-size: 50px;
                 }
-                &_sign {
+                &__sign {
                     font-size: 32px;
                 }
             }
@@ -60,6 +66,7 @@
                 line-height: 18px;
                 color: #3c4761;
                 font-weight: 700;
+                text-transform: uppercase;
             }
         }
     }

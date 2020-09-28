@@ -29,12 +29,13 @@
 
 <style scoped lang="scss">
     .page-section {
-        padding: 7.5em 0;
+        padding: 7.5em 0 6.875em 0;
         &__header {
             &--title {
                 font-size: 2.5em;
                 text-transform: uppercase;
                 text-align: center;
+                letter-spacing: 4px;
                 font-weight: 700;
                 &:after {
                     content: "";
